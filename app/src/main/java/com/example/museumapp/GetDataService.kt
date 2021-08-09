@@ -8,7 +8,12 @@ import retrofit2.http.Query
 
 interface GetDataService {
     @GET("/api/en/collection")
-    fun getCollectionData(@Query("key") key: String? = null): Call<Welcome>
+    fun getCollectionData(
+        @Query("key") key: String? = null,
+        @Query("p") page: String? = null,
+        @Query("ps") resultNum: String? = null,
+        @Query("imgonly") imgOnly: String? = null
+    ): Call<Welcome>
 }
 
 /*

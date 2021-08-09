@@ -10,5 +10,4 @@ class MainViewModelFactory(): ViewModelProvider.Factory{
         }
         throw IllegalArgumentException ("UnknownViewModel")
     }
-
 }

@@ -1,7 +1,6 @@
 package com.example.museumapp.ui
 
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.museumapp.models.ArtObject
@@ -13,17 +12,16 @@ import retrofit2.Response
 
 class MainViewModel : ViewModel() {
     private lateinit var call : Call<Welcome>
-    private lateinit var welcome : Welcome
     var artObjList = MutableLiveData<List<ArtObject>>()
-    var newlist = arrayListOf<Welcome>()
+    var newlist = arrayListOf<ArtObject>()
 
-    fun getData(key: String?) {
-        this.call = getServiceCall(key)
+    fun getData(key: String?, p: String? = null, ps: String? = null, imgonly: String? = null) {
+        this.call = getServiceCall(key, p, ps, imgonly)
         loadData(call)
     }
 
-    private fun getServiceCall(key: String?) : Call<Welcome> {
-        return RetrofitClient.retroInterface.getCollectionData(key)
+    private fun getServiceCall(key: String?, p: String? = null, ps: String? = null, imgonly: String? = null): Call<Welcome> {
+        return RetrofitClient.retroInterface.getCollectionData(key, p, ps, imgonly)
     }
 
     private fun loadData( call : Call<Welcome>){
@@ -31,10 +29,8 @@ class MainViewModel : ViewModel() {
             override fun onResponse(call: Call<Welcome>, response: Response<Welcome>) {
                 val body = response.body()
                 if (body != null) {
-                    with(body){
-                        welcome = Welcome(elapsedMilliseconds,count,countFacets,artObjects,facets)
-                    }
-                    artObjList.postValue(body.artObjects)
+                    newlist.addAll(body.artObjects as Collection<ArtObject>)
+                    artObjList.postValue(newlist)
                 }
             }
 

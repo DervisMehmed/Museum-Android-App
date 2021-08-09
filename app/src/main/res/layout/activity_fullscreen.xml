@@ -12,15 +12,18 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/mainRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/buttonLayout"
-            tools:listitem="@layout/cardview_listitems"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:listitem="@layout/cardview_listitems" />
 
         <LinearLayout
             android:id="@+id/buttonLayout"
@@ -31,7 +34,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent">
-
             <Button
                 android:id="@+id/buttonBack"
                 android:layout_width="wrap_content"
@@ -40,7 +42,6 @@
                 android:layout_marginHorizontal="50dp"
                 android:gravity="center_horizontal"
                 android:text="Back" />
-
             <Button
                 android:id="@+id/buttonNext"
                 android:layout_width="wrap_content"

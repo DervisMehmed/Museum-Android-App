@@ -24,7 +24,9 @@ class MainCustomAdapter (private val activity: Context?, private val arrData: Li
         fun bindCard(wel: ArtObject){
             this.artObj = wel
             itemTitle.text = wel.longTitle
-            Picasso.get().load(wel.webImage?.url)
+            Picasso.get()
+                .load(wel.webImage?.url)
+                .fit()
                 .into(itemPic)
         }
 
@@ -55,5 +57,4 @@ class MainCustomAdapter (private val activity: Context?, private val arrData: Li
     override fun getItemCount(): Int {
         return arrData.size
     }
-
 }

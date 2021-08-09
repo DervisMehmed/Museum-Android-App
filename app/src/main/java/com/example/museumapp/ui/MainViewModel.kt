@@ -30,7 +30,6 @@ class MainViewModel : ViewModel() {
         call.enqueue( object : Callback<Welcome> {
             override fun onResponse(call: Call<Welcome>, response: Response<Welcome>) {
                 val body = response.body()
-                println(body?.artObjects.toString())
                 if (body != null) {
                     with(body){
                         welcome = Welcome(elapsedMilliseconds,count,countFacets,artObjects,facets)

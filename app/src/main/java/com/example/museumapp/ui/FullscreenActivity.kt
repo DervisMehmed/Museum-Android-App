@@ -18,7 +18,7 @@ class FullscreenActivity : AppCompatActivity() {
     private lateinit var buttonBack: Button
     private lateinit var buttonNext: Button
     private var viewManager = GridLayoutManager(this, 2)
-    private val API_KEY = ""
+    private val API_KEY = "orGRvpiL"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +36,7 @@ class FullscreenActivity : AppCompatActivity() {
         buttonNext = findViewById(R.id.buttonNext)
 
         initializeAdaptor()
-        viewModel.getData()
+        viewModel.getData(API_KEY)
     }
 
     private fun initializeAdaptor(){
@@ -47,7 +47,7 @@ class FullscreenActivity : AppCompatActivity() {
     private fun observeData(){
         viewModel.artObjList.observe(this, Observer{
             Log.i("data",it.toString())
-            mainrecycler.adapter= MainCustomAdapter(this.applicationContext, it)
+            mainrecycler.adapter = MainCustomAdapter(this.applicationContext, it)
         })
     }
 }

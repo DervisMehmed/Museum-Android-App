@@ -5,7 +5,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    private const val SERVICE_URL = "https://www.rijksmuseum.nl/api/"
+    private const val SERVICE_URL = "https://www.rijksmuseum.nl/"
 
     val retrofitInstance: Retrofit.Builder by lazy {
         Retrofit.Builder()

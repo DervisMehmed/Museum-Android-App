@@ -12,11 +12,20 @@ import retrofit2.Response
 
 class MainViewModel : ViewModel() {
     private lateinit var call : Call<Welcome>
+    private var firstTime : Boolean = false
     var artObjList = MutableLiveData<List<ArtObject>>()
     var newlist = arrayListOf<ArtObject>()
+    var orgList = arrayListOf<ArtObject>()
+
+    fun search(key: String?, p: String? = null, ps: String? = null, imgonly: String? = null) {
+        this.call = getServiceCall(key, p, ps, imgonly)
+        firstTime = false
+        loadData(call)
+    }
 
     fun getData(key: String?, p: String? = null, ps: String? = null, imgonly: String? = null) {
         this.call = getServiceCall(key, p, ps, imgonly)
+        firstTime = true
         loadData(call)
     }
 
@@ -30,6 +39,8 @@ class MainViewModel : ViewModel() {
                 val body = response.body()
                 if (body != null) {
                     newlist.addAll(body.artObjects as Collection<ArtObject>)
+                    if(firstTime)
+                        orgList = newlist
                     artObjList.postValue(newlist)
                 }
             }

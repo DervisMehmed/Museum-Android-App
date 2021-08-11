@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.museumapp.models.ArtObject
+import com.example.museumapp.models.FacetFacet
 import com.example.museumapp.models.RetrofitClient
 import com.example.museumapp.models.Welcome
 import retrofit2.Call
@@ -17,7 +18,7 @@ class MainViewModel : ViewModel() {
     var newlist = arrayListOf<ArtObject>()
     var orgList = arrayListOf<ArtObject>()
 
-    fun search(key: String?, p: String? = null, ps: String? = null, imgonly: String? = null) {
+    fun searchData(key: String?, p: String? = null, ps: String? = null, imgonly: String? = null) {
         this.call = getServiceCall(key, p, ps, imgonly)
         firstTime = false
         loadData(call)

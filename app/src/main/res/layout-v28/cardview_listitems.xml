@@ -14,27 +14,26 @@
         android:layout_height="match_parent">
         <ImageView
             android:id="@+id/ItemImageView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minWidth="185dp"
-            android:minHeight="300dp"
+            android:minHeight="500dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:contentDescription="Object Has No Image!" />
         <TextView
             android:id="@+id/ItemTitleTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
             android:autoSizeTextType="uniform"
             android:background="@color/black_overlay"
             android:ellipsize="end"
-            android:maxLines="3"
+            android:maxLines="4"
             android:text="Deneme: Tarih oncesi item"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:padding="2dp"
+            android:padding="3dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

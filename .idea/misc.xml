@@ -4,7 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout-v28/cardview_listitems.xml" value="0.2296195652173913" />
-        <entry key="app/src/main/res/layout/activity_fullscreen.xml" value="0.21195652173913043" />
+        <entry key="app/src/main/res/layout/activity_fullscreen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/cardview_listitems.xml" value="0.5" />
       </map>
     </option>

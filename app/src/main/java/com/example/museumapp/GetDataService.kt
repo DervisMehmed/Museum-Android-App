@@ -11,12 +11,10 @@ interface GetDataService {
     fun getCollectionData(
         @Query("key") key: String? = null,
         @Query("p") page: String? = null,
-        @Query("ps") resultNum: String? = null,
-        @Query("imgonly") imgOnly: String? = null
-    ): Call<Welcome>
+        @Query("involvedMaker") maker: String? = null,
+        @Query("type") type: String? = null,
+        @Query("material") material: String? = null,
+        @Query("technique") technique: String? = null,
+        @Query("f.dating.period") period: String? = null
+        ): Call<Welcome>
 }
-
-/*
-@GET("/api/{culture}/collection{key}")
-    fun getCollectionData(@Path("culture") culture: String? = "en", @Query("key") key: String? = null): Call<Welcome>
- */

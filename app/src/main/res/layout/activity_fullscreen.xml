@@ -61,6 +61,7 @@
     </androidx.core.widget.NestedScrollView>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/sheetCoorLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
@@ -70,12 +71,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="#B3000000"
+            android:background="#C5CAE9"
             android:elevation="5dp"
             app:behavior_hideable="false"
-            app:behavior_peekHeight="44dp"
+            app:behavior_peekHeight="48dp"
             app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
-
             <ImageButton
                 android:id="@+id/sheetHideShowButton"
                 android:layout_width="match_parent"
@@ -83,17 +83,16 @@
                 android:background="@color/black_overlay"
                 android:clickable="true"
                 android:src="@drawable/ic_search"
-                android:paddingVertical="10dp"
+                android:paddingVertical="12dp"
                 app:layout_constraintBottom_toTopOf="@id/makerLayout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <LinearLayout
                 android:id="@+id/makerLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="start"
                 android:orientation="horizontal"
                 android:paddingVertical="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -102,15 +101,17 @@
 
                 <TextView
                     android:id="@+id/makerTextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="30dp"
-                    android:text="Principal Maker"
-                    android:textColor="@color/white" />
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="Principal Maker"/>
 
                 <Spinner
                     android:id="@+id/makerSpinner"
-                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
@@ -118,7 +119,7 @@
                 android:id="@+id/typeLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="start"
                 android:orientation="horizontal"
                 android:paddingVertical="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -127,15 +128,17 @@
 
                 <TextView
                     android:id="@+id/typeTextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="30dp"
-                    android:text="@string/type"
-                    android:textColor="@color/white" />
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:text="@string/type" />
 
                 <Spinner
                     android:id="@+id/typeSpinner"
-                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
@@ -143,7 +146,7 @@
                 android:id="@+id/periodLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="start"
                 android:orientation="horizontal"
                 android:paddingVertical="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -152,15 +155,17 @@
 
                 <TextView
                     android:id="@+id/periodTextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="30dp"
+                    android:layout_weight="1"
                     android:text="Period"
-                    android:textColor="@color/white" />
+                    android:textStyle="bold"/>
 
                 <Spinner
                     android:id="@+id/periodSpinner"
-                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
@@ -168,7 +173,7 @@
                 android:id="@+id/placeLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="start"
                 android:orientation="horizontal"
                 android:paddingVertical="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -177,15 +182,17 @@
 
                 <TextView
                     android:id="@+id/placeTextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="30dp"
+                    android:layout_weight="1"
                     android:text="Place"
-                    android:textColor="@color/white" />
+                    android:textStyle="bold"/>
 
                 <Spinner
                     android:id="@+id/placeSpinner"
-                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
@@ -193,7 +200,7 @@
                 android:id="@+id/materialLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="start"
                 android:orientation="horizontal"
                 android:paddingVertical="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -202,15 +209,16 @@
 
                 <TextView
                     android:id="@+id/materialTextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="30dp"
+                    android:layout_weight="1"
                     android:text="Material"
-                    android:textColor="@color/white" />
-
+                    android:textStyle="bold"/>
                 <Spinner
                     android:id="@+id/materialSpinner"
-                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
@@ -218,7 +226,7 @@
                 android:id="@+id/techniqueLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="start"
                 android:orientation="horizontal"
                 android:paddingVertical="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -227,15 +235,16 @@
 
                 <TextView
                     android:id="@+id/techniqueTextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="30dp"
+                    android:layout_weight="1"
                     android:text="Technique"
-                    android:textColor="@color/white" />
-
+                    android:textStyle="bold"/>
                 <Spinner
                     android:id="@+id/techniqueSpinner"
-                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
@@ -243,7 +252,7 @@
                 android:id="@+id/colorHexLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="start"
                 android:orientation="horizontal"
                 android:paddingVertical="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -252,27 +261,37 @@
 
                 <TextView
                     android:id="@+id/colorHexTextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="30dp"
+                    android:layout_weight="1"
                     android:text="Colors"
-                    android:textColor="@color/white" />
-
+                    android:textStyle="bold"/>
                 <Spinner
                     android:id="@+id/colorHexSpinner"
-                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
             <Button
+                android:id="@+id/searchButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="Search"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/clearButton"
+                app:layout_constraintTop_toBottomOf="@id/colorHexLayout" />
+            <Button
+                android:id="@+id/clearButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Clear"
+                app:layout_constraintEnd_toStartOf="@id/searchButton"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/colorHexLayout" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </RelativeLayout>

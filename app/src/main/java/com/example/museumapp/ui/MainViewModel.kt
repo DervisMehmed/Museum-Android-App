@@ -14,6 +14,7 @@ class MainViewModel : ViewModel() {
     private var firstTime : Boolean = false
     var artObjList = MutableLiveData<List<ArtObject>>()
     var newlist = arrayListOf<ArtObject>()
+    var searchList = arrayListOf<ArtObject>()
     var orgList = arrayListOf<ArtObject>()
 
     var makerLiveList = MutableLiveData<List<FacetFacet>>()
@@ -31,56 +32,30 @@ class MainViewModel : ViewModel() {
     var colorLiveList = MutableLiveData<List<FacetFacet>>()
     var colorList = arrayListOf<FacetFacet>()
 
-    fun searchData(key: String?,
-                   page: String? = null,
-                   maker: String? = null,
-                   type: String? = null,
-                   material: String? = null,
-                   technique: String? = null,
+    fun searchData(key: String?, page: String? = null, maker: String? = null,
+                   type: String? = null, material: String? = null, technique: String? = null,
                    period: String? = null) {
-        this.call = getServiceCall(
-            key,
-            page,
-            maker,
-            type,
-            material,
-            technique,
-            period)
+        this.call = getServiceCall(key, page, maker, type, material, technique, period)
         firstTime = false
         loadData(call)
     }
 
-    fun getData(key: String?,
-                page: String? = null,
-                maker: String? = null,
-                type: String? = null,
-                material: String? = null,
-                technique: String? = null,
-                period: String? = null) {
-        this.call = getServiceCall(
-            key,
-            page,
-            maker,
-            type,
-            material,
-            technique,
-            period)
+    fun getData(key: String?, page: String? = null, maker: String? = null, type: String? = null,
+                material: String? = null, technique: String? = null, period: String? = null) {
+        this.call = getServiceCall(key, page, maker, type, material, technique, period)
         firstTime = true
         loadData(call)
     }
 
     fun restore(){
         newlist = orgList
+        searchList.clear()
         artObjList.postValue(newlist)
     }
 
-    private fun getServiceCall(key: String?,
-                               page: String? = null,
-                               maker: String? = null,
-                               type: String? = null,
-                               material: String? = null,
-                               technique: String? = null,
-                               period: String? = null): Call<Welcome> {
+    private fun getServiceCall(key: String?, page: String? = null, maker: String? = null,
+                               type: String? = null, material: String? = null,
+                               technique: String? = null, period: String? = null): Call<Welcome> {
         return RetrofitClient.retroInterface.getCollectionData(key, page, maker, type, material, technique, period)
     }
 
@@ -88,13 +63,13 @@ class MainViewModel : ViewModel() {
         call.enqueue( object : Callback<Welcome> {
             override fun onResponse(call: Call<Welcome>, response: Response<Welcome>) {
                 body = response.body()!!
-                // search yaparken sorun cikarir
                 if(firstTime){
                     newlist.addAll(body.artObjects as Collection<ArtObject>)
                     orgList = newlist
                 }
                 else{
-                    newlist = body.artObjects as ArrayList<ArtObject>
+                    searchList.addAll(body.artObjects as ArrayList<ArtObject>)
+                    newlist = searchList
                 }
                 makerList = body.facets?.get(0)?.facets as ArrayList<FacetFacet>
                 typeList = body.facets?.get(1)?.facets as ArrayList<FacetFacet>

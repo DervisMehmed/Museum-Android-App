@@ -44,6 +44,7 @@ class FullscreenActivity : AppCompatActivity() {
     private var technique: String? = null
     private var color:  String? = null
     private var viewManager = LinearLayoutManager(this)
+    private var spinnerInitializedList = arrayListOf<Boolean>()
     private var mSpinnerInitialized = false
     private var searchMore = false
     private var searchPage = 1
@@ -68,9 +69,10 @@ class FullscreenActivity : AppCompatActivity() {
         searchButton.setOnClickListener{ searchListener() }
         clearButton.setOnClickListener{ clearListener() }
         spinnerListeners()
-        // TODO : SPINNERLARI DOLDURUP SEARCH YAP
-        // TODO : VIEWMODEL'DA FAZLADAN BIR ARRAY ACIP ILK ARAMA SONUCLARINI TUTCAK.
-        // TODO : ORJINAL ARRAY DE SU ANA KADAR ACILAN ITEMLERI TUTACAK
+
+        for ( i in 0..6){
+            spinnerInitializedList.add(i, false)
+        }
     }
 
     private fun initUI(){
@@ -92,16 +94,23 @@ class FullscreenActivity : AppCompatActivity() {
         sheetBehavior = BottomSheetBehavior.from(bottomSheetLayout)
     }
 
+    private fun initSpinner(){
+        for ( i in 0..6){
+            spinnerInitializedList[i] = false
+        }
+    }
+
     private fun searchListener() {
         viewModel.searchData(API_KEY, maker = maker, type = type,
                 material = material, technique = technique, period = period)
         searchMore = true
-        mSpinnerInitialized= false
+        initSpinner()
         mainrecycler.smoothScrollToPosition(0)
     }
 
     private fun clearListener(){
         viewModel.restore()
+        initSpinner()
         searchMore = false
         searchPage = 1
         maker = null
@@ -109,22 +118,26 @@ class FullscreenActivity : AppCompatActivity() {
         material = null
         technique = null
         period = null
+        color = null
     }
 
-    // TODO: MAKER'I SAKLIYOR FAKAT TYPE'I SAKLAMIYOR
     private fun buttonNextList(){
         if(!searchMore) {
             currentPage += 1
-            mSpinnerInitialized = false
+            initSpinner()
             viewModel.getData(API_KEY, currentPage.toString(), maker, type,
                     material, technique, period)
-            Log.d("SEARCHMORE: " ,"currentpage = $currentPage // type = $type")
+            Log.d("SEARCHMORE: " ,"currentpage = $currentPage" +
+                    "\nmaker: $maker\ntype = $type\nperiod: $period\nplace: $place" +
+                    "\nmaterial: $material\ntechnique: $technique\ncolor: $color")
         } else{
             searchPage += 1
-            mSpinnerInitialized = false
+            initSpinner()
             viewModel.searchData(API_KEY, searchPage.toString(), maker, type,
                     material, technique, period)
-            Log.d("SEARCHMORE: " ,"searchpage = $searchPage // type = $type")
+            Log.d("SEARCHMORE: " ,"searchPage = $searchPage" +
+                    "\nmaker: $maker\ntype = $type\nperiod: $period\nplace: $place" +
+                    "\nmaterial: $material\ntechnique: $technique\ncolor: $color")
         }
     }
 
@@ -148,8 +161,8 @@ class FullscreenActivity : AppCompatActivity() {
     private fun spinnerListeners(){
         makerSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                if (!mSpinnerInitialized) {
-                    mSpinnerInitialized = true
+                if (!spinnerInitializedList[0]) {
+                    spinnerInitializedList[0] = true
                     return
                 }
                 if (parent != null) {
@@ -162,8 +175,8 @@ class FullscreenActivity : AppCompatActivity() {
         }
         typeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                if (!mSpinnerInitialized) {
-                    mSpinnerInitialized = true
+                if (!spinnerInitializedList[1]) {
+                    spinnerInitializedList[1] = true
                     return
                 }
                 if (parent != null) {
@@ -176,8 +189,8 @@ class FullscreenActivity : AppCompatActivity() {
         }
         periodSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                if (!mSpinnerInitialized) {
-                    mSpinnerInitialized = true
+                if (!spinnerInitializedList[2]) {
+                    spinnerInitializedList[2] = true
                     return
                 }
                 if (parent != null) {
@@ -190,8 +203,8 @@ class FullscreenActivity : AppCompatActivity() {
         }
         placeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                if (!mSpinnerInitialized) {
-                    mSpinnerInitialized = true
+                if (!spinnerInitializedList[3]) {
+                    spinnerInitializedList[3] = true
                     return
                 }
                 if (parent != null) {
@@ -204,8 +217,8 @@ class FullscreenActivity : AppCompatActivity() {
         }
         materialSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                if (!mSpinnerInitialized) {
-                    mSpinnerInitialized = true
+                if (!spinnerInitializedList[4]) {
+                    spinnerInitializedList[4] = true
                     return
                 }
                 if (parent != null) {
@@ -218,8 +231,8 @@ class FullscreenActivity : AppCompatActivity() {
         }
         techniqueSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                if (!mSpinnerInitialized) {
-                    mSpinnerInitialized = true
+                if (!spinnerInitializedList[5]) {
+                    spinnerInitializedList[5] = true
                     return
                 }
                 if (parent != null) {
@@ -232,8 +245,8 @@ class FullscreenActivity : AppCompatActivity() {
         }
         colorSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                if (!mSpinnerInitialized) {
-                    mSpinnerInitialized = true
+                if (!spinnerInitializedList[6]) {
+                    spinnerInitializedList[6] = true
                     return
                 }
                 if (parent != null) {

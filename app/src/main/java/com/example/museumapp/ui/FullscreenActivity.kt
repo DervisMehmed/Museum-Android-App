@@ -105,7 +105,7 @@ class FullscreenActivity : AppCompatActivity() {
                 material = material, technique = technique, period = period)
         searchMore = true
         initSpinner()
-        mainrecycler.smoothScrollToPosition(0)
+        fullscreenContent.smoothScrollTo(0, mainrecycler.top, 300)
     }
 
     private fun clearListener(){

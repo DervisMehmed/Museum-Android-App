@@ -9,8 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.museumapp.R
-import com.example.museumapp.models.ArtObject
-import com.example.museumapp.models.Welcome
+import com.example.museumapp.models.detailModels.collectionModels.ArtObject
 import com.example.museumapp.ui.ArtObjectDetailScreen.ArtObjectDetailScreen
 import com.squareup.picasso.Picasso
 import java.io.Serializable

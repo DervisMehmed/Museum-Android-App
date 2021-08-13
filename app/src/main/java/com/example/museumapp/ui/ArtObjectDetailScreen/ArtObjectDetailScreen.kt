@@ -7,9 +7,8 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.example.museumapp.R
-import com.example.museumapp.models.ArtObject
+import com.example.museumapp.models.detailModels.collectionModels.ArtObject
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.squareup.picasso.Picasso
 

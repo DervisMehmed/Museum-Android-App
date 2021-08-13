@@ -1,4 +1,4 @@
-package com.example.museumapp.models
+package com.example.museumapp.models.detailModels.collectionModels
 
 import com.example.museumapp.GetDataService
 import retrofit2.Retrofit

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.museumapp.R
 import com.example.museumapp.models.ArtObject
 import com.example.museumapp.models.Welcome
+import com.example.museumapp.ui.ArtObjectDetailScreen.ArtObjectDetailScreen
 import com.squareup.picasso.Picasso
 import java.io.Serializable
 
@@ -35,11 +36,11 @@ class MainCustomAdapter (private val activity: Context?, private val arrData: Li
         }
 
         override fun onClick(v: View?) {
-            /*val context = v?.context
-            val intent = Intent(context, CharDetailScreenActivity::class.java)
-            intent.putExtra("OBJECT", character as Serializable)
+            val context = v?.context
+            val intent = Intent(context, ArtObjectDetailScreen::class.java)
+            intent.putExtra("OBJECT", artObj as Serializable)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-            context?.startActivity(intent)*/
+            context?.startActivity(intent)
         }
     }
 

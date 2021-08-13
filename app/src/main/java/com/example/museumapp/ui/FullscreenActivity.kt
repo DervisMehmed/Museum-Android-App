@@ -64,6 +64,7 @@ class FullscreenActivity : AppCompatActivity() {
         mainrecycler.setHasFixedSize(true)
 
         viewModel.getData(API_KEY)
+
         buttonNext.setOnClickListener{ buttonNextList() }
         sheetButton.setOnClickListener{ sheetListener() }
         searchButton.setOnClickListener{ searchListener() }

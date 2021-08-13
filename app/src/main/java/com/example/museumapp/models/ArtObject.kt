@@ -15,4 +15,6 @@ data class ArtObject (
     val webImage: Image? = null,
     val headerImage: Image? = null,
     val productionPlaces: List<String>? = null
-)  : Serializable
+)  : Serializable{
+
+}

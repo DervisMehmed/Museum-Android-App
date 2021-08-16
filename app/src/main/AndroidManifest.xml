@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MuseumApp">
         <activity
-            android:name=".ui.ArtObjectDetailScreen.ArtObjectDetailScreen"
+            android:name=".ui.artObjectDetailScreen.ArtObjectDetailScreen"
             android:exported="true" />
         <activity
             android:name=".ui.FullscreenActivity"

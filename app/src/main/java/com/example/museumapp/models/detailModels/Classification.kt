@@ -1,23 +1,14 @@
 package com.example.museumapp.models.detailModels
 
-
-import com.google.gson.annotations.SerializedName
+import com.google.gson.JsonElement
 
 data class Classification(
-    @SerializedName("events")
-    val events: List<Any>? = null,
-    @SerializedName("iconClassDescription")
-    val iconClassDescription: List<String>? = null,
-    @SerializedName("iconClassIdentifier")
     val iconClassIdentifier: List<String>? = null,
-    @SerializedName("motifs")
-    val motifs: List<Any>? = null,
-    @SerializedName("objectNumbers")
-    val objectNumbers: List<String>? = null,
-    @SerializedName("people")
+    val iconClassDescription: List<String>? = null,
+    val motifs: JsonElement? = null,
+    val events: JsonElement? = null,
+    val periods: JsonElement? = null,
+    val places: List<String>? = null,
     val people: List<String>? = null,
-    @SerializedName("periods")
-    val periods: List<Any>? = null,
-    @SerializedName("places")
-    val places: List<String>? = null
+    val objectNumbers: List<String>? = null
 )

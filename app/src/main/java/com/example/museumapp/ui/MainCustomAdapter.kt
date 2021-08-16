@@ -9,12 +9,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.museumapp.R
-import com.example.museumapp.models.detailModels.collectionModels.ArtObject
-import com.example.museumapp.ui.ArtObjectDetailScreen.ArtObjectDetailScreen
+import com.example.museumapp.models.collectionModels.ArtObject
+import com.example.museumapp.ui.artObjectDetailScreen.ArtObjectDetailScreen
 import com.squareup.picasso.Picasso
-import java.io.Serializable
 
-class MainCustomAdapter (private val activity: Context?, private val arrData: List<ArtObject>)
+class MainCustomAdapter (private val activity: Context?,
+                         private val arrData: List<ArtObject>)
 : RecyclerView.Adapter<MainCustomAdapter.ViewHolder>()  {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener  {
         private val itemTitle : TextView = view.findViewById(R.id.ItemTitleTextView)
@@ -37,19 +37,20 @@ class MainCustomAdapter (private val activity: Context?, private val arrData: Li
         override fun onClick(v: View?) {
             val context = v?.context
             val intent = Intent(context, ArtObjectDetailScreen::class.java)
-            intent.putExtra("OBJECT", artObj as Serializable)
+            //intent.putExtra("OBJECT", artObj?.objectNumber)
+            intent.putExtra("OBJECT", artObj)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             context?.startActivity(intent)
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainCustomAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         var itemView: View? = null
         itemView = LayoutInflater.from(activity).inflate(R.layout.cardview_listitems, parent, false)
         return ViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: MainCustomAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val model = arrData[position]
         holder.bindCard(model)
     }

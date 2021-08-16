@@ -3,7 +3,10 @@ package com.example.museumapp.ui
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.museumapp.models.detailModels.collectionModels.*
+import com.example.museumapp.models.collectionModels.ArtObject
+import com.example.museumapp.models.collectionModels.FacetFacet
+import com.example.museumapp.models.collectionModels.RetrofitClient
+import com.example.museumapp.models.collectionModels.Welcome
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

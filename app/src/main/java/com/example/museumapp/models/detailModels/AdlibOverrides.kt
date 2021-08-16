@@ -1,13 +1,9 @@
 package com.example.museumapp.models.detailModels
 
-
-import com.google.gson.annotations.SerializedName
+import com.google.gson.JsonElement
 
 data class AdlibOverrides(
-    @SerializedName("etiketText")
-    val etiketText: Any? = null,
-    @SerializedName("maker")
-    val maker: Any? = null,
-    @SerializedName("titel")
-    val titel: Any? = null
+    val titel: JsonElement? = null,
+    val maker: JsonElement? = null,
+    val etiketText: JsonElement? = null
 )

@@ -1,35 +1,20 @@
 package com.example.museumapp.models.detailModels
 
-
-import com.google.gson.annotations.SerializedName
+import com.google.gson.JsonElement
 
 data class PrincipalMaker(
-    @SerializedName("biography")
-    val biography: Any? = null,
-    @SerializedName("dateOfBirth")
-    val dateOfBirth: String? = null,
-    @SerializedName("dateOfBirthPrecision")
-    val dateOfBirthPrecision: Any? = null,
-    @SerializedName("dateOfDeath")
-    val dateOfDeath: String? = null,
-    @SerializedName("dateOfDeathPrecision")
-    val dateOfDeathPrecision: Any? = null,
-    @SerializedName("name")
     val name: String? = null,
-    @SerializedName("nationality")
-    val nationality: Any? = null,
-    @SerializedName("occupation")
-    val occupation: List<String>? = null,
-    @SerializedName("placeOfBirth")
+    val unFixedName: String? = null,
     val placeOfBirth: String? = null,
-    @SerializedName("placeOfDeath")
+    val dateOfBirth: String? = null,
+    val dateOfBirthPrecision: JsonElement? = null,
+    val dateOfDeath: String? = null,
+    val dateOfDeathPrecision: JsonElement? = null,
     val placeOfDeath: String? = null,
-    @SerializedName("productionPlaces")
-    val productionPlaces: List<String>? = null,
-    @SerializedName("qualification")
-    val qualification: Any? = null,
-    @SerializedName("roles")
+    val occupation: List<String>? = null,
     val roles: List<String>? = null,
-    @SerializedName("unFixedName")
-    val unFixedName: String? = null
+    val nationality: JsonElement? = null,
+    val biography: JsonElement? = null,
+    val productionPlaces: List<String>? = null,
+    val qualification: JsonElement? = null
 )

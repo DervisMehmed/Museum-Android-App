@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:elevation="4dp"
-    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="10dp"
     app:cardElevation="4dp">
 
     <androidx.core.widget.NestedScrollView
@@ -22,6 +22,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:elevation="8dp"
+                android:gravity="center"
+                android:text="deneme"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -45,7 +48,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/typeDetailLayout"
+                android:id="@+id/descDetailLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -54,46 +57,41 @@
                 app:layout_constraintTop_toBottomOf="@id/makerDetailLayout">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="4dp"
-                    android:text="TYPE TEXT:"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/typeDetailTextView"
+                    android:id="@+id/descDetailTextView"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                     android:padding="3dp" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/periodDetailLayout"
+                android:id="@+id/makersDetailLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/typeDetailLayout">
+                app:layout_constraintTop_toBottomOf="@id/descDetailLayout">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="4dp"
-                    android:text="PERIOD TEXT:"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/periodDetailTextView"
-                    android:layout_width="0dp"
+                    android:id="@+id/makersDetailTextView"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                     android:padding="3dp" />
+                <TextView
+                    android:id="@+id/periodDetailTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:text="1657"/>
             </LinearLayout>
 
             <LinearLayout
@@ -103,7 +101,7 @@
                 android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/periodDetailLayout">
+                app:layout_constraintTop_toBottomOf="@id/makersDetailLayout">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -118,8 +116,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:clickable="true"
                     android:gravity="center"
-                    android:padding="3dp" />
+                    android:padding="3dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    app:drawableEndCompat="@drawable/arrow_right" />
             </LinearLayout>
 
             <LinearLayout
@@ -145,6 +146,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                     android:padding="3dp" />
             </LinearLayout>
 
@@ -171,6 +173,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                     android:padding="3dp" />
             </LinearLayout>
 
@@ -192,11 +195,13 @@
                     android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/colorRecyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:elevation="8dp"
+                    android:padding="4dp"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                    app:spanCount="4"
+                    app:spanCount="5"
                     tools:listitem="@layout/color_card" />
             </LinearLayout>
 

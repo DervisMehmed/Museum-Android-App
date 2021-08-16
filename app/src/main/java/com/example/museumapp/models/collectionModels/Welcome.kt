@@ -1,4 +1,4 @@
-package com.example.museumapp.models.detailModels.collectionModels
+package com.example.museumapp.models.collectionModels
 
 import java.io.Serializable
 

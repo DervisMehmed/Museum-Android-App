@@ -2,7 +2,6 @@ package com.example.museumapp.ui
 
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -45,11 +44,10 @@ class FullscreenActivity : AppCompatActivity() {
     private var color:  String? = null
     private var viewManager = LinearLayoutManager(this)
     private var spinnerInitializedList = arrayListOf<Boolean>()
-    private var mSpinnerInitialized = false
     private var searchMore = false
     private var searchPage = 1
     private var currentPage = 1
-    private val API_KEY = "orGRvpiL"
+    private lateinit var API_KEY: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,17 +61,23 @@ class FullscreenActivity : AppCompatActivity() {
         initializeAdaptor()
         mainrecycler.setHasFixedSize(true)
 
+        API_KEY = getString(R.string.API_KEY)
         viewModel.getData(API_KEY)
 
+
+
+        for ( i in 0..6){
+            spinnerInitializedList.add(i, false)
+        }
+    }
+
+    override fun onPostCreate(savedInstanceState: Bundle?) {
+        super.onPostCreate(savedInstanceState)
         buttonNext.setOnClickListener{ buttonNextList() }
         sheetButton.setOnClickListener{ sheetListener() }
         searchButton.setOnClickListener{ searchListener() }
         clearButton.setOnClickListener{ clearListener() }
         spinnerListeners()
-
-        for ( i in 0..6){
-            spinnerInitializedList.add(i, false)
-        }
     }
 
     private fun initUI(){
@@ -128,17 +132,11 @@ class FullscreenActivity : AppCompatActivity() {
             initSpinner()
             viewModel.getData(API_KEY, currentPage.toString(), maker, type,
                     material, technique, period)
-            Log.d("SEARCHMORE: " ,"currentpage = $currentPage" +
-                    "\nmaker: $maker\ntype = $type\nperiod: $period\nplace: $place" +
-                    "\nmaterial: $material\ntechnique: $technique\ncolor: $color")
         } else{
             searchPage += 1
             initSpinner()
             viewModel.searchData(API_KEY, searchPage.toString(), maker, type,
                     material, technique, period)
-            Log.d("SEARCHMORE: " ,"searchPage = $searchPage" +
-                    "\nmaker: $maker\ntype = $type\nperiod: $period\nplace: $place" +
-                    "\nmaterial: $material\ntechnique: $technique\ncolor: $color")
         }
     }
 
@@ -171,7 +169,6 @@ class FullscreenActivity : AppCompatActivity() {
                 }
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
             }
         }
         typeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -185,7 +182,6 @@ class FullscreenActivity : AppCompatActivity() {
                 }
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
             }
         }
         periodSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -199,7 +195,6 @@ class FullscreenActivity : AppCompatActivity() {
                 }
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
             }
         }
         placeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -213,7 +208,6 @@ class FullscreenActivity : AppCompatActivity() {
                 }
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
             }
         }
         materialSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -227,7 +221,6 @@ class FullscreenActivity : AppCompatActivity() {
                 }
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
             }
         }
         techniqueSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -241,7 +234,6 @@ class FullscreenActivity : AppCompatActivity() {
                 }
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
             }
         }
         colorSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -255,7 +247,6 @@ class FullscreenActivity : AppCompatActivity() {
                 }
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
             }
         }
     }

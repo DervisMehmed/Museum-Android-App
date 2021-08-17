@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:elevation="4dp"
     app:cardCornerRadius="10dp"
     app:cardElevation="4dp">
@@ -11,202 +12,205 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="4dp">
+        android:fillViewport="true">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/detailSheetButton"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:elevation="8dp"
-                android:gravity="center"
-                android:text="deneme"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:id="@+id/makerDetailLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/detailSheetButton">
-
-                <TextView
-                    android:id="@+id/makerDetailTextView"
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/detailSheetButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:padding="3dp"
-                    android:text="DENEME\n\n"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
-            </LinearLayout>
+                    android:text="TITLE"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <LinearLayout
-                android:id="@+id/descDetailLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/makerDetailLayout">
-
-                <TextView
-                    android:id="@+id/descDetailTextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:padding="3dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/makersDetailLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/descDetailLayout">
-
-                <TextView
-                    android:id="@+id/makersDetailTextView"
+                <LinearLayout
+                    android:id="@+id/makerDetailLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:padding="3dp" />
-                <TextView
-                    android:id="@+id/periodDetailTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center"
-                    android:padding="3dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:text="1657"/>
-            </LinearLayout>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/detailSheetButton">
 
-            <LinearLayout
-                android:id="@+id/placeDetailLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/makersDetailLayout">
+                    <TextView
+                        android:id="@+id/makerDetailTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="maker\n\n"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="4dp"
-                    android:text="PLACE TEXT:"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/placeDetailTextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:gravity="center"
-                    android:padding="3dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    app:drawableEndCompat="@drawable/arrow_right" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/materialDetailLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/placeDetailLayout">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="4dp"
-                    android:text="MATERIAL TEXT:"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/materialDetailTextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:padding="3dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/techniqueDetailLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/materialDetailLayout">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="4dp"
-                    android:text="TECHNIQUE TEXT:"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/techniqueDetailTextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:padding="3dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/techniqueDetailLayout">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="4dp"
-                    android:text="COLORS:"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textStyle="bold" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/colorRecyclerView"
+                <LinearLayout
+                    android:id="@+id/descDetailLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:elevation="8dp"
-                    android:padding="4dp"
-                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                    app:spanCount="5"
-                    tools:listitem="@layout/color_card" />
-            </LinearLayout>
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/makerDetailLayout">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/descDetailTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:padding="3dp" />
+                </LinearLayout>
 
+                <LinearLayout
+                    android:id="@+id/makersDetailLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/descDetailLayout">
 
-    </androidx.core.widget.NestedScrollView>
+                    <TextView
+                        android:id="@+id/makersDetailTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:padding="3dp"
+                        android:text="makers"/>
+                    <TextView
+                        android:id="@+id/periodDetailTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:text="1657"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/placeDetailLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/makersDetailLayout">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="4dp"
+                        android:text="Place"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/placeDetailTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        app:drawableEndCompat="@drawable/arrow_right" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/materialDetailLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/placeDetailLayout">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="4dp"
+                        android:text="Material(s)"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/materialDetailTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:padding="3dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/techniqueDetailLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/materialDetailLayout">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="4dp"
+                        android:text="Historical Person"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/histPeopleDetailTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:padding="3dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/techniqueDetailLayout">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="4dp"
+                        android:text="Colors"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/colorRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="8dp"
+                        android:padding="4dp"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:spanCount="5"
+                        tools:listitem="@layout/color_card" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
 </androidx.cardview.widget.CardView>

@@ -11,7 +11,6 @@
         android:id="@+id/fullscreen_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true"
         android:paddingTop="20dp"
         android:scrollbars="vertical"
         tools:context=".ui.FullscreenActivity">
@@ -43,7 +42,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/buttonBack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -53,7 +52,7 @@
                     android:text="Back"
                     android:visibility="gone" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/buttonNext"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -81,18 +80,20 @@
             app:behavior_hideable="false"
             app:behavior_peekHeight="48dp"
             app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
             <ImageButton
                 android:id="@+id/sheetHideShowButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/black_overlay"
                 android:clickable="true"
-                android:src="@drawable/ic_search"
                 android:paddingVertical="12dp"
+                android:src="@drawable/ic_search"
                 app:layout_constraintBottom_toTopOf="@id/makerLayout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <LinearLayout
                 android:id="@+id/makerLayout"
                 android:layout_width="match_parent"
@@ -108,16 +109,16 @@
                     android:id="@+id/makerTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
                     android:layout_weight="1"
-                    android:text="Principal Maker"/>
+                    android:text="Principal Maker"
+                    android:textStyle="bold" />
 
                 <Spinner
                     android:id="@+id/makerSpinner"
-                    android:gravity="center"
-                    android:layout_weight="1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center" />
             </LinearLayout>
 
             <LinearLayout
@@ -136,15 +137,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textStyle="bold"
-                    android:text="@string/type" />
+                    android:text="@string/type"
+                    android:textStyle="bold" />
 
                 <Spinner
                     android:id="@+id/typeSpinner"
-                    android:gravity="center"
-                    android:layout_weight="1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center" />
             </LinearLayout>
 
             <LinearLayout
@@ -164,14 +165,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Period"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <Spinner
                     android:id="@+id/periodSpinner"
-                    android:gravity="center"
-                    android:layout_weight="1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center" />
             </LinearLayout>
 
             <LinearLayout
@@ -191,14 +192,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Place"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <Spinner
                     android:id="@+id/placeSpinner"
-                    android:gravity="center"
-                    android:layout_weight="1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center" />
             </LinearLayout>
 
             <LinearLayout
@@ -218,13 +219,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Material"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
+
                 <Spinner
                     android:id="@+id/materialSpinner"
-                    android:gravity="center"
-                    android:layout_weight="1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center" />
             </LinearLayout>
 
             <LinearLayout
@@ -244,13 +246,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Technique"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
+
                 <Spinner
                     android:id="@+id/techniqueSpinner"
-                    android:gravity="center"
-                    android:layout_weight="1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center" />
             </LinearLayout>
 
             <LinearLayout
@@ -270,13 +273,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Colors"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
+
                 <Spinner
                     android:id="@+id/colorHexSpinner"
-                    android:gravity="center"
-                    android:layout_weight="1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center" />
             </LinearLayout>
 
             <Button
@@ -288,6 +292,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/clearButton"
                 app:layout_constraintTop_toBottomOf="@id/colorHexLayout" />
+
             <Button
                 android:id="@+id/clearButton"
                 android:layout_width="wrap_content"

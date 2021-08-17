@@ -37,7 +37,6 @@ class MainCustomAdapter (private val activity: Context?,
         override fun onClick(v: View?) {
             val context = v?.context
             val intent = Intent(context, ArtObjectDetailScreen::class.java)
-            //intent.putExtra("OBJECT", artObj?.objectNumber)
             intent.putExtra("OBJECT", artObj)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             context?.startActivity(intent)

@@ -65,26 +65,34 @@ class ArtObjectDetailScreen : AppCompatActivity() {
     private fun initUI(obj: DetailWelcome){
         sheetLayout = findViewById(R.id.detailBottomSheet)
         sheetBehavior = BottomSheetBehavior.from(sheetLayout)
-        sheetBehavior.peekHeight = this.findViewById<TextView>(R.id.makerDetailTextView).height
         findViewById<TextView>(R.id.makerDetailTextView).text = obj.artObject?.principalMaker
-        findViewById<TextView>(R.id.descDetailTextView).text = obj.artObject?.plaqueDescriptionEnglish
+        findViewById<TextView>(R.id.descDetailTextView).text = obj.artObject?.plaqueDescriptionEnglish + "\n\n${obj.artObject?.subTitle}"
 
         var temp = ""
+        //  Production Places
         obj.artObject?.productionPlaces?.forEach {
             temp += " $it"
         }
         findViewById<TextView>(R.id.placeDetailTextView).text = temp.removeSuffix(", ")
+        //  Materials used in art object
         temp = ""
         obj.artObject?.materials?.forEach {
             temp += "$it, "
         }
         findViewById<TextView>(R.id.materialDetailTextView).text = temp.removeSuffix(", ")
+        //  Makers
         temp = ""
         obj.artObject?.principalMakers?.forEach {
             temp += "${it.name}, "
         }
-
         findViewById<TextView>(R.id.makersDetailTextView).text = temp.removeSuffix(", ")
+        //  Historical People
+        temp = ""
+        obj.artObject?.historicalPersons?.forEach {
+            temp += "${it}, "
+        }
+        findViewById<TextView>(R.id.histPeopleDetailTextView).text = temp.removeSuffix(", ")
+
         findViewById<TextView>(R.id.periodDetailTextView).text = obj.artObject?.dating?.presentingDate
         findViewById<Button>(R.id.detailSheetButton).text = obj.artObject?.title
         findViewById<Button>(R.id.detailSheetButton).setOnClickListener{ buttonListener()}

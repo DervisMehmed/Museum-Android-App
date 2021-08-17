@@ -20,7 +20,7 @@
         <item name="android:fontFamily">serif</item>
     </style>
 
-    <style name="RobotoButtonStyle" parent="android:Widget.Holo.Button">
+    <style name="RobotoButtonStyle" parent="android:Widget.Button">
         <item name="android:fontFamily">serif</item>
     </style>
 

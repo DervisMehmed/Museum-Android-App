@@ -1,4 +1,4 @@
-package com.example.museumapp.ui
+package com.example.museumapp.ui.collectionListScreen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

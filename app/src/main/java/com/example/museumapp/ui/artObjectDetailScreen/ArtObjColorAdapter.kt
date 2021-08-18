@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.museumapp.R
 import com.example.museumapp.models.detailModels.ColorsWithNormalization
@@ -26,7 +27,9 @@ class ArtObjColorAdapter (private val activity: Context?,
         }
 
         override fun onClick(v: View?) {
-            TODO("Not yet implemented")
+            if (v != null) {
+                Toast.makeText( v.context, "Color is ${colorObj?.normalizedHex}", Toast.LENGTH_LONG).show()
+            }
         }
     }
 

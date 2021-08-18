@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:elevation="4dp"
     app:cardCornerRadius="10dp"
     app:cardElevation="4dp">
@@ -18,24 +18,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/detailSheetButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="TITLE"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
-
                 <LinearLayout
                     android:id="@+id/makerDetailLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/detailSheetButton">
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/detailSheetButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="TITLE"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
 
                     <TextView
                         android:id="@+id/makerDetailTextView"
@@ -43,7 +44,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:padding="3dp"
-                        android:text="maker\n\n"
+                        android:text="maker\n"
                         android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
                 </LinearLayout>
 
@@ -111,6 +112,7 @@
                         android:paddingHorizontal="4dp"
                         android:text="Place"
                         android:layout_weight="1"
+                        android:gravity="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                         android:textStyle="bold" />
 
@@ -141,6 +143,7 @@
                         android:paddingHorizontal="4dp"
                         android:text="Material(s)"
                         android:layout_weight="1"
+                        android:gravity="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                         android:textStyle="bold" />
 
@@ -169,6 +172,7 @@
                         android:paddingHorizontal="4dp"
                         android:text="Historical Person"
                         android:layout_weight="1"
+                        android:gravity="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                         android:textStyle="bold" />
 
@@ -185,7 +189,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:layout_marginTop="15dp"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -206,8 +210,10 @@
                         android:layout_height="wrap_content"
                         android:elevation="8dp"
                         android:padding="4dp"
+                        android:scrollbars="vertical"
                         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                        app:spanCount="5"
+                        app:spanCount="4"
+                        tools:itemCount="20"
                         tools:listitem="@layout/color_card" />
                 </LinearLayout>
 

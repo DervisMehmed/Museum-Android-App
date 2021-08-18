@@ -24,10 +24,8 @@ class ArtObjectDetailViewModel: ViewModel() {
         call.enqueue(object: Callback<DetailWelcome> {
             override fun onResponse(call: Call<DetailWelcome>, response: Response<DetailWelcome>) {
                 val body = response.body()
-                Log.d("DetailViewModel Response:", response.toString())
                 if (body != null) {
                     detailObject = body
-                    Log.d("DetailViewModel", body.toString())
                 }
                 liveDetailObj.postValue(detailObject)
             }

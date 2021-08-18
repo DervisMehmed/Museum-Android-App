@@ -18,10 +18,12 @@
 
     <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
         <item name="android:fontFamily">serif</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="RobotoButtonStyle" parent="android:Widget.Button">
         <item name="android:fontFamily">serif</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Theme.MuseumApp.Fullscreen" parent="Theme.MuseumApp">

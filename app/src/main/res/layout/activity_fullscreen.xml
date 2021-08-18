@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:paddingTop="20dp"
         android:scrollbars="vertical"
-        tools:context=".ui.FullscreenActivity">
+        tools:context=".ui.collectionListScreen.FullscreenActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -42,17 +42,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/buttonBack"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginHorizontal="50dp"
-                    android:gravity="center_horizontal"
-                    android:text="Back"
-                    android:visibility="gone" />
-
-                <androidx.appcompat.widget.AppCompatButton
+                <Button
                     android:id="@+id/buttonNext"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -85,7 +75,7 @@
                 android:id="@+id/sheetHideShowButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/black_overlay"
+                android:background="#5C6BC0"
                 android:clickable="true"
                 android:paddingVertical="12dp"
                 android:src="@drawable/ic_search"
@@ -110,6 +100,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:text="Principal Maker"
                     android:textStyle="bold" />
 
@@ -137,6 +129,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:text="@string/type"
                     android:textStyle="bold" />
 
@@ -163,6 +157,8 @@
                     android:id="@+id/periodTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:layout_weight="1"
                     android:text="Period"
                     android:textStyle="bold" />
@@ -190,6 +186,8 @@
                     android:id="@+id/placeTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:layout_weight="1"
                     android:text="Place"
                     android:textStyle="bold" />
@@ -217,6 +215,8 @@
                     android:id="@+id/materialTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:layout_weight="1"
                     android:text="Material"
                     android:textStyle="bold" />
@@ -244,6 +244,8 @@
                     android:id="@+id/techniqueTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:layout_weight="1"
                     android:text="Technique"
                     android:textStyle="bold" />
@@ -271,6 +273,8 @@
                     android:id="@+id/colorHexTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:layout_weight="1"
                     android:text="Colors"
                     android:textStyle="bold" />

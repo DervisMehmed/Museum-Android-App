@@ -1,4 +1,4 @@
-package com.example.museumapp.ui
+package com.example.museumapp.ui.collectionListScreen
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData

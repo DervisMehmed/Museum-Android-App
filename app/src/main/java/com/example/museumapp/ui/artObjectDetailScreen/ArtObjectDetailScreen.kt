@@ -2,8 +2,10 @@ package com.example.museumapp.ui.artObjectDetailScreen
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -15,10 +17,6 @@ import com.example.museumapp.models.collectionModels.ArtObject
 import com.example.museumapp.models.detailModels.DetailWelcome
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.squareup.picasso.Picasso
-
-/*
-*   TODO: progressbar implementation
-*/
 
 class ArtObjectDetailScreen : AppCompatActivity() {
     private lateinit var artOjbViewModel: ArtObjectDetailViewModel
@@ -53,6 +51,10 @@ class ArtObjectDetailScreen : AppCompatActivity() {
             initUI(it)
             loadImage(it)
         })
+
+        Handler().postDelayed({
+            sheetBehavior.peekHeight = findViewById<LinearLayout>(R.id.makerDetailLayout).height
+        }, 1000)
     }
 
     private fun loadImage(obj: DetailWelcome) {

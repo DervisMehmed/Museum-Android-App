@@ -1,4 +1,4 @@
-package com.example.museumapp.ui
+package com.example.museumapp.ui.collectionListScreen
 
 import android.content.Context
 import android.content.Intent

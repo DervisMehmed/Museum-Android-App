@@ -3,11 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Dervis/Documents/GitHub/Museum-Android-App/app/src/main/res/drawable/ic_bottomsheetup.xml" value="0.310126582278481" />
+        <entry key="..\:/Users/Dervis/Documents/GitHub/Museum-Android-App/app/src/main/res/drawable/ic_launcher_background.xml" value="0.310126582278481" />
+        <entry key="..\:/Users/Dervis/Documents/GitHub/Museum-Android-App/app/src/main/res/layout-v28/cardview_listitems.xml" value="0.1" />
         <entry key="..\:/Users/Dervis/Documents/GitHub/Museum-Android-App/app/src/main/res/layout/activity_art_object_detail_screen.xml" value="0.226775956284153" />
         <entry key="..\:/Users/Dervis/Documents/GitHub/Museum-Android-App/app/src/main/res/layout/activity_fullscreen.xml" value="0.17862021857923496" />
+        <entry key="..\:/Users/Dervis/Documents/GitHub/Museum-Android-App/app/src/main/res/layout/activity_menu.xml" value="0.33" />
         <entry key="..\:/Users/Dervis/Documents/GitHub/Museum-Android-App/app/src/main/res/layout/cardview_listitems.xml" value="0.14703425229741018" />
         <entry key="..\:/Users/Dervis/Documents/GitHub/Museum-Android-App/app/src/main/res/layout/color_card.xml" value="0.25" />
         <entry key="..\:/Users/Dervis/Documents/GitHub/Museum-Android-App/app/src/main/res/layout/detail_screen.xml" value="0.25" />
+        <entry key="..\:/Users/Dervis/Documents/GitHub/Museum-Android-App/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.310126582278481" />
         <entry key="app/src/main/res/layout-v28/cardview_listitems.xml" value="0.2296195652173913" />
         <entry key="app/src/main/res/layout/activity_fullscreen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/cardview_listitems.xml" value="0.5" />

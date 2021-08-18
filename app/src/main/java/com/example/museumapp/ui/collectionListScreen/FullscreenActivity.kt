@@ -1,4 +1,4 @@
-package com.example.museumapp.ui
+package com.example.museumapp.ui.collectionListScreen
 
 import android.graphics.Color
 import android.os.Bundle
@@ -22,7 +22,6 @@ class FullscreenActivity : AppCompatActivity() {
     private lateinit var fullscreenContent: NestedScrollView
     private lateinit var bottomSheetLayout: ConstraintLayout
     private lateinit var mainrecycler: RecyclerView
-    private lateinit var buttonBack: Button
     private lateinit var buttonNext: Button
     private lateinit var sheetButton: ImageButton
     private lateinit var searchButton: Button
@@ -84,7 +83,6 @@ class FullscreenActivity : AppCompatActivity() {
         fullscreenContent = findViewById(R.id.fullscreen_content)
         bottomSheetLayout = findViewById(R.id.searchBottomSheet)
         mainrecycler = findViewById(R.id.mainRecyclerView)
-        buttonBack = findViewById(R.id.buttonBack)
         buttonNext = findViewById(R.id.buttonNext)
         makerSpinner = findViewById(R.id.makerSpinner)
         typeSpinner = findViewById(R.id.typeSpinner)
